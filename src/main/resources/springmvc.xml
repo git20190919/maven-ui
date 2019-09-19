@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- servlet所在的包需要进行扫描 @Controller -->
+    <context:component-scan base-package="org.lanqiao.controller"></context:component-scan>
+    
+  <!--    mvc提供的注解驱动(帮助我们解析mvc的各个注解是什么意思) -->
+	<mvc:annotation-driven/> <!-- 使用json时加入注解@ResponseBody需解析,@GetMapping @PostMapping,DispatcherServlet映射路径是"/" -->
+    <!-- 定义静态资源文件映射路径 -->
+    <mvc:resources location="/assets/" mapping="/assets/**"></mvc:resources>
+<!--     <mvc:resources location="/assets/css/" mapping="/assets/css/**"></mvc:resources>
+    <mvc:resources location="/assets/js/" mapping="/assets/js/**"></mvc:resources> -->
+    <!-- 视图转换器 -->
+    <bean id="jspViewResolver"  class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	    <property name="prefix" value="/WEB-INF/view/"/>
+	    <property name="suffix" value=".jsp"/>
+	</bean>
+</beans>
