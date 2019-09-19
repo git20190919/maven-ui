@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.google.common.base.Charsets;
 import com.google.common.hash.Hashing;
 /**
- * zhushi 
+ * zhushi 远程修改的内容
  * @author Administrator
  *
  */
