@@ -22,7 +22,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.common.base.Charsets;
 import com.google.common.hash.Hashing;
-
+/**
+ * zhushi 
+ * @author Administrator
+ *
+ */
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
